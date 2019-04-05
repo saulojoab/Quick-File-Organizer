@@ -44,19 +44,17 @@ namespace Quick_File_Organizer
                     {
                         musicList.Add(i);
                     }
-
-                    if (videoFormats.Any(c => i.EndsWith(c)))
+                    else if (videoFormats.Any(c => i.EndsWith(c)))
                     {
                         videoList.Add(i);
                     }
-
-                    if (documentFormats.Any(c => i.EndsWith(c)))
+                    else if (documentFormats.Any(c => i.EndsWith(c)))
                     {
                         documentList.Add(i);
                     }
                 }
 
-                foreach (string i in documentList)
+                foreach (string i in videoList)
                 {
                     Console.WriteLine(i);
                 }
