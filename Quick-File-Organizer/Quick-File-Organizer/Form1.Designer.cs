@@ -43,9 +43,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(165, 32);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(446, 40);
+            this.label1.Size = new System.Drawing.Size(450, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quickly organize your files below:";
+            this.label1.Text = "Quickly organize your files easely:";
             // 
             // btSelectFolder
             // 

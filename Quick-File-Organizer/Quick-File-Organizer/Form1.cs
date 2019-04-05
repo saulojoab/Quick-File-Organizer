@@ -33,20 +33,30 @@ namespace Quick_File_Organizer
                 List<string> documentList = new List<string>();
                 List<string> videoList = new List<string>();
 
+                string[] musicFormats = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma" };
+                string[] videoFormats = { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" };
+                string[] documentFormats = { ".doc", ".docx", ".html", ".htm",
+                    ".odt", ".pdf", ".xls", ".xlsx", ".ods", ".ppt", ".pptx", ".txt" };
+
                 foreach (string i in files)
                 {
-                    if (new[] { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma" }.Any(c => i.EndsWith(c)))
+                    if (musicFormats.Any(c => i.EndsWith(c)))
                     {
                         musicList.Add(i);
                     }
 
-                    if (new[] { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" }.Any(c => i.EndsWith(c)))
+                    if (videoFormats.Any(c => i.EndsWith(c)))
                     {
                         videoList.Add(i);
                     }
+
+                    if (documentFormats.Any(c => i.EndsWith(c)))
+                    {
+                        documentList.Add(i);
+                    }
                 }
 
-                foreach (string i in videoList)
+                foreach (string i in documentList)
                 {
                     Console.WriteLine(i);
                 }
