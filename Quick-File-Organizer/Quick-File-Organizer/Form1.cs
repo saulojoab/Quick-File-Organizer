@@ -39,9 +39,14 @@ namespace Quick_File_Organizer
                     {
                         musicList.Add(i);
                     }
+
+                    if (new[] { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" }.Any(c => i.EndsWith(c)))
+                    {
+                        videoList.Add(i);
+                    }
                 }
 
-                foreach (string i in musicList)
+                foreach (string i in videoList)
                 {
                     Console.WriteLine(i);
                 }
