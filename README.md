@@ -1,7 +1,7 @@
 # Quick File Organizer
 :rocket: Quickly organize files from a folder with a few clicks. <b>Windows Only!</b>
 A C# project.
-<br>
+<br><br>
 ![A Beautiful Software](https://i.imgur.com/wrLe2ZU.png)
 
 # How does it work? :thinking:
