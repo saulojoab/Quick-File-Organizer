@@ -35,7 +35,7 @@
             this.lblVideos = new System.Windows.Forms.Label();
             this.lblDocuments = new System.Windows.Forms.Label();
             this.lblExecutables = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.pgProgress = new System.Windows.Forms.ProgressBar();
             this.lblImages = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -119,12 +119,12 @@
             this.lblExecutables.TabIndex = 6;
             this.lblExecutables.Text = "Executables: 0";
             // 
-            // progressBar1
+            // pgProgress
             // 
-            this.progressBar1.Location = new System.Drawing.Point(214, 170);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(367, 44);
-            this.progressBar1.TabIndex = 7;
+            this.pgProgress.Location = new System.Drawing.Point(214, 170);
+            this.pgProgress.Name = "pgProgress";
+            this.pgProgress.Size = new System.Drawing.Size(367, 44);
+            this.pgProgress.TabIndex = 7;
             // 
             // lblImages
             // 
@@ -144,7 +144,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(794, 328);
             this.Controls.Add(this.lblImages);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pgProgress);
             this.Controls.Add(this.lblExecutables);
             this.Controls.Add(this.lblDocuments);
             this.Controls.Add(this.lblVideos);
@@ -152,7 +152,9 @@
             this.Controls.Add(this.lblFilesFound);
             this.Controls.Add(this.btSelectFolder);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QFO - Quick File Organizer";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -168,7 +170,7 @@
         private System.Windows.Forms.Label lblVideos;
         private System.Windows.Forms.Label lblDocuments;
         private System.Windows.Forms.Label lblExecutables;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar pgProgress;
         private System.Windows.Forms.Label lblImages;
     }
 }
