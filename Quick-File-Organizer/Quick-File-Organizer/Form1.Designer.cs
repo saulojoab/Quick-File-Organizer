@@ -32,8 +32,11 @@
             this.btSelectFolder = new System.Windows.Forms.Button();
             this.lblFilesFound = new System.Windows.Forms.Label();
             this.lblMusic = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblVideos = new System.Windows.Forms.Label();
+            this.lblDocuments = new System.Windows.Forms.Label();
+            this.lblExecutables = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lblImages = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,44 +69,73 @@
             this.lblFilesFound.BackColor = System.Drawing.Color.Black;
             this.lblFilesFound.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilesFound.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblFilesFound.Location = new System.Drawing.Point(318, 162);
+            this.lblFilesFound.Location = new System.Drawing.Point(336, 235);
             this.lblFilesFound.Name = "lblFilesFound";
-            this.lblFilesFound.Size = new System.Drawing.Size(152, 26);
+            this.lblFilesFound.Size = new System.Drawing.Size(130, 26);
             this.lblFilesFound.TabIndex = 2;
-            this.lblFilesFound.Text = "Files Found: 100";
+            this.lblFilesFound.Text = "Files Found: 0";
             // 
             // lblMusic
             // 
             this.lblMusic.AutoSize = true;
             this.lblMusic.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMusic.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblMusic.Location = new System.Drawing.Point(188, 194);
+            this.lblMusic.Location = new System.Drawing.Point(232, 277);
             this.lblMusic.Name = "lblMusic";
-            this.lblMusic.Size = new System.Drawing.Size(92, 26);
+            this.lblMusic.Size = new System.Drawing.Size(81, 26);
             this.lblMusic.TabIndex = 3;
-            this.lblMusic.Text = "Music: 10";
+            this.lblMusic.Text = "Music: 0";
             // 
-            // label2
+            // lblVideos
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label2.Location = new System.Drawing.Point(346, 196);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 26);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Videos: 10";
+            this.lblVideos.AutoSize = true;
+            this.lblVideos.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVideos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblVideos.Location = new System.Drawing.Point(360, 277);
+            this.lblVideos.Name = "lblVideos";
+            this.lblVideos.Size = new System.Drawing.Size(90, 26);
+            this.lblVideos.TabIndex = 4;
+            this.lblVideos.Text = "Videos: 0";
             // 
-            // label3
+            // lblDocuments
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label3.Location = new System.Drawing.Point(498, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 26);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Documents: 10";
+            this.lblDocuments.AutoSize = true;
+            this.lblDocuments.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDocuments.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblDocuments.Location = new System.Drawing.Point(497, 277);
+            this.lblDocuments.Name = "lblDocuments";
+            this.lblDocuments.Size = new System.Drawing.Size(129, 26);
+            this.lblDocuments.TabIndex = 5;
+            this.lblDocuments.Text = "Documents: 0";
+            // 
+            // lblExecutables
+            // 
+            this.lblExecutables.AutoSize = true;
+            this.lblExecutables.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExecutables.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblExecutables.Location = new System.Drawing.Point(48, 277);
+            this.lblExecutables.Name = "lblExecutables";
+            this.lblExecutables.Size = new System.Drawing.Size(134, 26);
+            this.lblExecutables.TabIndex = 6;
+            this.lblExecutables.Text = "Executables: 0";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(214, 170);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(367, 44);
+            this.progressBar1.TabIndex = 7;
+            // 
+            // lblImages
+            // 
+            this.lblImages.AutoSize = true;
+            this.lblImages.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImages.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblImages.Location = new System.Drawing.Point(657, 277);
+            this.lblImages.Name = "lblImages";
+            this.lblImages.Size = new System.Drawing.Size(93, 26);
+            this.lblImages.TabIndex = 8;
+            this.lblImages.Text = "Images: 0";
             // 
             // Form1
             // 
@@ -111,8 +143,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(794, 328);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblImages);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lblExecutables);
+            this.Controls.Add(this.lblDocuments);
+            this.Controls.Add(this.lblVideos);
             this.Controls.Add(this.lblMusic);
             this.Controls.Add(this.lblFilesFound);
             this.Controls.Add(this.btSelectFolder);
@@ -130,8 +165,11 @@
         private System.Windows.Forms.Button btSelectFolder;
         private System.Windows.Forms.Label lblFilesFound;
         private System.Windows.Forms.Label lblMusic;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblVideos;
+        private System.Windows.Forms.Label lblDocuments;
+        private System.Windows.Forms.Label lblExecutables;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lblImages;
     }
 }
 
