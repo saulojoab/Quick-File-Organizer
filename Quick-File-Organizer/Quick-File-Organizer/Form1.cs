@@ -27,16 +27,19 @@ namespace Quick_File_Organizer
 
             if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fb.SelectedPath))
             {
+                MessageBox.Show(fb.SelectedPath);
                 string[] files = Directory.GetFiles(fb.SelectedPath);
 
                 List<string> musicList = new List<string>();
                 List<string> documentList = new List<string>();
                 List<string> videoList = new List<string>();
+                List<string> executableList = new List<string>();
 
                 string[] musicFormats = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma" };
                 string[] videoFormats = { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" };
                 string[] documentFormats = { ".doc", ".docx", ".html", ".htm",
                     ".odt", ".pdf", ".xls", ".xlsx", ".ods", ".ppt", ".pptx", ".txt" };
+                string[] executableFormats = { ".run", ".apk", ".exe", ".jar", ".bat", ".bin", ".app" };
 
                 foreach (string i in files)
                 {
@@ -52,15 +55,20 @@ namespace Quick_File_Organizer
                     {
                         documentList.Add(i);
                     }
+                    else if (executableFormats.Any(c => i.EndsWith(c)))
+                    {
+                        executableList.Add(i);
+                    }
                 }
 
-                foreach (string i in videoList)
-                {
-                    Console.WriteLine(i);
-                }
-
-                MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
-            } else
+                lblFilesFound.Text = "Files found: " + files.Length.ToString();
+                
+                Directory.CreateDirectory(fb.SelectedPath + @"\Music Files");
+                Directory.CreateDirectory(fb.SelectedPath + @"\Video Files");
+                Directory.CreateDirectory(fb.SelectedPath + @"\Document Files");
+                Directory.CreateDirectory(fb.SelectedPath + @"\Executable Files");
+            }
+            else
             {
                 MessageBox.Show("You haven't selected any folders! :(", "OOPS!");
             }
