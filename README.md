@@ -19,5 +19,8 @@ Q.F.O will help you organize all those files with some clicks. Here's how:
 ### 3 - That's it! :joy:
 ![Yay](https://i.imgur.com/J0qQLpc.png)
 
+Now all your files will be inside these folders:
+![Beautiful Folders](https://i.imgur.com/lgkJbdC.png)
+
 # How can I help making it better?
 Feel free to open a <a href="https://github.com/saulojoab/Quick-File-Organizer/issues">Issue</a> or create a <a href="https://github.com/saulojoab/Quick-File-Organizer/pulls">Pull Request</a> if you want to. I created this for studying purpouses only.
