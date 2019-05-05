@@ -1,7 +1,7 @@
 # Quick File Organizer
 :rocket: Quickly organize files from a folder with a few clicks. <b>Windows Only!</b>
-A C# project.<br>
-I kind of stole this idea from my friend <a href="https://github.com/b3coded/">João</a>. It was a kind of challenge. Here's his repository: <a href="https://github.com/b3coded/file-organizer">João's File Organizer</a>
+A C# project.<br><br>
+I kind of stole this idea from my friend <a href="https://github.com/b3coded/">João</a>. It was a challenge. Here's his repository: <a href="https://github.com/b3coded/file-organizer">João's File Organizer</a>
 <br><br>
 ![A Beautiful Software](https://i.imgur.com/wrLe2ZU.png)
 
