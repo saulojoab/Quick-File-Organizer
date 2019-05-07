@@ -13,11 +13,30 @@ namespace Quick_File_Organizer
 {
     public partial class Form1 : Form
     {
+        private List<string> musicList = new List<string>();
+        private List<string> documentList = new List<string>();
+        private List<string> videoList = new List<string>();
+        private List<string> executableList = new List<string>();
+        private List<string> imageList = new List<string>();
+
+        private string[] musicFormats = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma", ".mid", ".asd" };
+        private string[] videoFormats = { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" };
+        private string[] imageFormats = { ".tif", ".tiff", ".gif", ".jpeg", "jpg", ".jif", ".jfif", ".jp2", ".jpx",
+                    ".j2k", ".j2c", ".fpx", ".pcd", ".png"};
+        private string[] documentFormats = { ".doc", ".docx", ".html", ".htm",
+                    ".odt", ".pdf", ".xls", ".xlsx", ".ods", ".ppt", ".pptx", ".txt", ".zip", ".torrent", ".rar", ".iso" };
+        private string[] executableFormats = { ".run", ".apk", ".exe", ".jar", ".bat", ".bin", ".app" };
+
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// This function moves a list of files to a folder.
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <param name="path"></param>
         public void MoveFiles(List<string> lista, string path)
         {
             foreach (string i in lista)
@@ -26,6 +45,9 @@ namespace Quick_File_Organizer
             }
         }
 
+        /// <summary>
+        /// This method resets all values from the labels.
+        /// </summary>
         public void ResetLabels()
         {
             lblFilesFound.Text = "Files found: 0";
@@ -36,6 +58,9 @@ namespace Quick_File_Organizer
             lblImages.Text = "Images: 0";
         }
 
+        /// <summary>
+        /// This method increases the progress bar by 10.
+        /// </summary>
         public void IncreaseProgressBar()
         {
             pgProgress.Value = pgProgress.Value + 10; 
@@ -43,52 +68,48 @@ namespace Quick_File_Organizer
 
         private void btSelectFolder_Click(object sender, EventArgs e)
         {
+            // Opening the folder dialog.
             var fb = new FolderBrowserDialog();
 
             DialogResult result = fb.ShowDialog();
 
+            // If the user selects something.
             if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fb.SelectedPath))
             {
+                // Get all files from the selected folder.
                 string[] files = Directory.GetFiles(fb.SelectedPath);
-
-                List<string> musicList = new List<string>();
-                List<string> documentList = new List<string>();
-                List<string> videoList = new List<string>();
-                List<string> executableList = new List<string>();
-                List<string> imageList = new List<string>();
-
-                string[] musicFormats = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma", ".mid", ".asd" };
-                string[] videoFormats = { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" };
-                string[] imageFormats = { ".tif", ".tiff", ".gif", ".jpeg", "jpg", ".jif", ".jfif", ".jp2", ".jpx", 
-                    ".j2k", ".j2c", ".fpx", ".pcd", ".png"};
-                string[] documentFormats = { ".doc", ".docx", ".html", ".htm",
-                    ".odt", ".pdf", ".xls", ".xlsx", ".ods", ".ppt", ".pptx", ".txt", ".zip", ".torrent", ".rar", ".iso" };
-                string[] executableFormats = { ".run", ".apk", ".exe", ".jar", ".bat", ".bin", ".app" };
-
+                
+                // For each file in the file list.
                 foreach (string i in files)
                 {
+                    // If it's a music file.
                     if (musicFormats.Any(c => i.EndsWith(c)))
                     {
                         musicList.Add(i);
                     }
+                    // If it's a video file.
                     else if (videoFormats.Any(c => i.EndsWith(c)))
                     {
                         videoList.Add(i);
                     }
+                    // If it's an image file.
                     else if (imageFormats.Any(c => i.EndsWith(c)))
                     {
                         imageList.Add(i);
                     }
+                    // If it's a document file.
                     else if (documentFormats.Any(c => i.EndsWith(c)))
                     {
                         documentList.Add(i);
                     }
+                    // If it's an executable file.
                     else if (executableFormats.Any(c => i.EndsWith(c)))
                     {
                         executableList.Add(i);
                     }
                 }
 
+                // Update labels.
                 lblFilesFound.Text = "Files found: " + files.Length.ToString();
                 lblMusic.Text = "Music: " + musicList.ToArray().Length.ToString();
                 lblExecutables.Text = "Executables: " + executableList.ToArray().Length.ToString();
@@ -96,7 +117,10 @@ namespace Quick_File_Organizer
                 lblDocuments.Text = "Documents: " + documentList.ToArray().Length.ToString();
                 lblImages.Text = "Images: " + imageList.ToArray().Length.ToString();
 
+                // Confirming if the user wants to organize the files.
                 DialogResult dialogResult = MessageBox.Show("We're about to organize all your files in folders. That means we'll move them. Is that ok?", "Confirmation", MessageBoxButtons.YesNo);
+
+                // If he confirms.
                 if (dialogResult == DialogResult.Yes)
                 {
                     // Step 1 = 5 actions.
