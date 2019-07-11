@@ -18,6 +18,7 @@ namespace Quick_File_Organizer
         private List<string> videoList = new List<string>();
         private List<string> executableList = new List<string>();
         private List<string> imageList = new List<string>();
+        private List<string> codeList = new List<string>();
 
         private string[] musicFormats = { ".mp3", ".wav", ".ogg", ".flac", ".aac", ".wma", ".mid", ".asd" };
         private string[] videoFormats = { ".mp4", ".wmv", ".avi", ".3gp", ".mkv", ".webm", ".mov" };
@@ -26,6 +27,8 @@ namespace Quick_File_Organizer
         private string[] documentFormats = { ".doc", ".docx", ".html", ".htm",
                     ".odt", ".pdf", ".xls", ".xlsx", ".ods", ".ppt", ".pptx", ".txt", ".zip", ".torrent", ".rar", ".iso" };
         private string[] executableFormats = { ".run", ".apk", ".exe", ".jar", ".bat", ".bin", ".app" };
+        private string[] codeFormats = { ".4DB", ".4TH", ".A", ".A2W", ".AAB", ".ABC", ".ACD", ".ADDIN", ".ADS", ".AGI", ".AIA", ".ALB", ".AM4", ".AM5", ".AM6", ".AM7", ".ANE", ".AP_", ".APA", ".APPX", ".APPXUPLOAD", ".APS", ".ARSC", ".ARTPROJ", ".AS", ".AS2PROJ", ".AS3PROJ", ".ASC", ".ASI", ".ASM", ".ASM", ".ASVF", ".AU3", ".AUTOPLAY", ".AWK", ".B", ".BAS", ".BB", ".BBC", ".BBPROJECT", ".BBPROJECTD", ".BCP", ".BDSPROJ", ".BET", ".BLUEJ", ".BPG", ".BPL", ".BRX", ".BS2", ".BSC", ".C", ".C", ".CAF", ".CAPROJ", ".CAPX", ".CBL", ".CBP", ".CC", ".CCGAME", ".CCN", ".CCP", ".CCS", ".CD", ".CDF", ".CFC", ".CLASS", ".CLIPS", ".CLS", ".CLW", ".COB", ".COD", ".CONFIG", ".CP", ".CP", ".CPP", ".CS", ".CSI", ".CSI", ".CSN", ".CSP", ".CSPROJ", ".CSX", ".CTL", ".CTP", ".CTXT", ".CU", ".CVSRC", ".CXP", ".CXX", ".D", ".DBA", ".DBA", ".DBML", ".DBO", ".DBPRO", ".DBPROJ", ".DCP", ".DCPROJ", ".DCU", ".DCUIL", ".DEC", ".DEF", ".DEVICEIDS", ".DEX", ".DF1", ".DFM", ".DGML", ".DGSL", ".DIFF", ".DM1", ".DMD", ".DOB", ".DOX", ".DPK", ".DPKW", ".DPL", ".DPR", ".DPROJ", ".DSGM", ".DSP", ".DTD", ".EDML", ".EDMX", ".ENT", ".ENTITLEMENTS", ".EQL", ".ERB", ".ERL", ".EX", ".EXP", ".EXW", ".F", ".F90", ".FBP", ".FBZ7", ".FGL", ".FLA", ".FOR", ".FORTH", ".FPM", ".FRAMEWORK", ".FRX", ".FS", ".FSI", ".FSPROJ", ".FSPROJ", ".FSSCRIPT", ".FSX", ".FTL", ".FTN", ".FXC", ".FXCPROJ", ".FXL", ".FXML", ".FXPL", ".GAMEPROJ", ".GCH", ".GED", ".GEM", ".GEMSPEC", ".GFAR", ".GITATTRIBUTES", ".GITIGNORE", ".GLD", ".GM6", ".GM81", ".GMD", ".GMK", ".GMO", ".GMX", ".GORM", ".GREENFOOT", ".GROOVY", ".GROUPPROJ", ".GS", ".GS3", ".H", ".HAL", ".HAML", ".HAS", ".HBS", ".HH", ".HPF", ".HPP", ".HS", ".HXX", ".I", ".ICONSET", ".IDB", ".IDL", ".IDT", ".ILK", ".IML", ".INC", ".INL", ".INO", ".IPCH", ".IPR", ".IPR", ".ISE", ".ISM", ".IST", ".IWB", ".IWS", ".JAVA", ".JCP", ".JIC", ".JPR", ".JPX", ".JSFL", ".JSPF", ".KDEVELOP", ".KDEVPRJ", ".KPL", ".L", ".LBI", ".LBS", ".LDS", ".LGO", ".LHS", ".LICENSES", ".LICX", ".LISP", ".LIT", ".LIVECODE", ".LNT", ".LPROJ", ".LSPROJ", ".LTB", ".LUA", ".LUCIDSNIPPET", ".LXSPROJ", ".M", ".M", ".M4", ".MAGIK", ".MAK", ".MARKDOWN", ".MCP", ".MD", ".MDZIP", ".MER", ".MF", ".MFA", ".MK", ".ML", ".MM", ".MO", ".MOD", ".MOM", ".MPR", ".MRT", ".MSHA", ".MSHC", ".MSHI", ".MSIX", ".MSL", ".MSP", ".MSS", ".MV", ".MXML", ".MYAPP", ".NBC", ".NCB", ".NED", ".NFM", ".NIB", ".NK", ".NLS", ".NQC", ".NSH", ".NSI", ".NUPKG", ".NUSPEC", ".NVV", ".NW", ".NXC", ".O", ".OCA", ".OCTEST", ".OCX", ".ODL", ".OMO", ".OWL", ".P", ".P3D", ".PAS", ".PAS", ".PATCH", ".PB", ".PBG", ".PBJ", ".PBK", ".PBXBTREE", ".PBXPROJ", ".PBXUSER", ".PCH", ".PCP", ".PDE", ".PDM", ".PH", ".PIKA", ".PJX", ".PKGDEF", ".PKGUNDEF", ".PL", ".PL", ".PL1", ".PLAYGROUND", ".PLC", ".PLE", ".PLI", ".PM", ".PO", ".POD", ".POT", ".PPC", ".PRG", ".PRG", ".PRI", ".PRI", ".PRO", ".PROTO", ".PSC", ".PSM1", ".PTL", ".PWN", ".PXD", ".PY", ".PYD", ".PYW", ".PYX", ".QPR", ".R", ".R", ".R", ".RAV", ".RB", ".RBC", ".RBP", ".RBW", ".RC", ".RC2", ".RDLC", ".REFRESH", ".RES", ".RES", ".RESJSON", ".RESOURCES", ".RESW", ".RESX", ".REXX", ".RISE", ".RKT", ".RNC", ".RODL", ".RPY", ".RSRC", ".RSS", ".RUL", ".S", ".S19", ".SAS", ".SB", ".SB2", ".SB3", ".SBPROJ", ".SC", ".SCC", ".SCRIPTSUITE", ".SCRIPTTERMINOLOGY", ".SDEF", ".SH", ".SLN", ".SLOGO", ".SLTNG", ".SMA", ".SMALI", ".SNIPPET", ".SO", ".SPEC", ".SQLPROJ", ".SRC", ".SRC.RPM", ".SS", ".SSC", ".SSI", ".STORYBOARD", ".SUD", ".SUO", ".SUP", ".SVN-BASE", ".SWC", ".SWD", ".SWIFT", ".SYM", ".T", ".TARGETS", ".TCL", ".TDS", ".TESTRUNCONFIG", ".TESTSETTINGS", ".TEXTFACTORY", ".TK", ".TLD", ".TLH", ".TLI", ".TMLANGUAGE", ".TMPROJ", ".TNS", ".TPU", ".TRX", ".TT", ".TU", ".TUR", ".TWIG", ".UI", ".UML", ".V", ".V", ".V11.SUO", ".V12.SUO", ".VB", ".VBG", ".VBP", ".VBPROJ", ".VBX", ".VBZ", ".VC", ".VCP", ".VCPROJ", ".VCXPROJ", ".VDM", ".VDP", ".VDPROJ", ".VGC", ".VHD", ".VM", ".VSMACROS", ".VSMDI", ".VSMPROJ", ".VSP", ".VSPS", ".VSPSCC", ".VSPX", ".VSSSCC", ".VSZ", ".VTM", ".VTML", ".VTV", ".W", ".W32", ".WDGT", ".WDGTPROJ", ".WDL", ".WDP", ".WDW", ".WIQ", ".WIXLIB", ".WIXMSP", ".WIXMST", ".WIXOBJ", ".WIXOUT", ".WIXPDB", ".WIXPROJ", ".WORKSPACE", ".WPW", ".WSC", ".WSP", ".WXI", ".WXL", ".WXS", ".XAML", ".XAMLX", ".XAP", ".XCAPPDATA", ".XCARCHIVE", ".XCCONFIG", ".XCDATAMODELD", ".XCODEPROJ", ".XCSNAPSHOTS", ".XCWORKSPACE", ".XIB", ".XOJO_BINARY_PROJECT", ".XOJO_MENU", ".XOJO_PROJECT", ".XOJO_XML_PROJECT", ".XOML", ".XPP", ".XQ", ".XQL", ".XQM", ".XQUERY", ".XSD", ".XT", ".Y", ".YAML", ".YML", ".YMP", ".YPR" };
+
 
         public Form1()
         {
@@ -63,7 +66,7 @@ namespace Quick_File_Organizer
         /// </summary>
         public void IncreaseProgressBar()
         {
-            pgProgress.Value = pgProgress.Value + 10; 
+            pgProgress.Value = pgProgress.Value + 8;
         }
 
         private void btSelectFolder_Click(object sender, EventArgs e)
@@ -83,29 +86,33 @@ namespace Quick_File_Organizer
                 foreach (string i in files)
                 {
                     // If it's a music file.
-                    if (musicFormats.Any(c => i.EndsWith(c)))
+                    if (musicFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
                     {
                         musicList.Add(i);
                     }
                     // If it's a video file.
-                    else if (videoFormats.Any(c => i.EndsWith(c)))
+                    else if (videoFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
                     {
                         videoList.Add(i);
                     }
                     // If it's an image file.
-                    else if (imageFormats.Any(c => i.EndsWith(c)))
+                    else if (imageFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
                     {
                         imageList.Add(i);
                     }
                     // If it's a document file.
-                    else if (documentFormats.Any(c => i.EndsWith(c)))
+                    else if (documentFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
                     {
                         documentList.Add(i);
                     }
                     // If it's an executable file.
-                    else if (executableFormats.Any(c => i.EndsWith(c)))
+                    else if (executableFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
                     {
                         executableList.Add(i);
+                    }
+                    else if (codeFormats.Any(c => i.EndsWith(c, StringComparison.CurrentCultureIgnoreCase)))
+                    {
+                        codeList.Add(i);
                     }
                 }
 
@@ -116,6 +123,7 @@ namespace Quick_File_Organizer
                 lblVideos.Text = "Videos: " + videoList.ToArray().Length.ToString();
                 lblDocuments.Text = "Documents: " + documentList.ToArray().Length.ToString();
                 lblImages.Text = "Images: " + imageList.ToArray().Length.ToString();
+                lblCode.Text = "Code: " + codeList.ToArray().Length.ToString();
 
                 // Confirming if the user wants to organize the files.
                 DialogResult dialogResult = MessageBox.Show("We're about to organize all your files in folders. That means we'll move them. Is that ok?", "Confirmation", MessageBoxButtons.YesNo);
@@ -134,6 +142,8 @@ namespace Quick_File_Organizer
                     IncreaseProgressBar();
                     Directory.CreateDirectory(fb.SelectedPath + @"\Executable Files"); // Executables Folder.
                     IncreaseProgressBar();
+                    Directory.CreateDirectory(fb.SelectedPath + @"\Code Files"); // Executables Folder.
+                    IncreaseProgressBar();
 
                     // Step 2 = 5 actions.
                     MoveFiles(imageList, fb.SelectedPath + @"\Image Files");
@@ -145,6 +155,8 @@ namespace Quick_File_Organizer
                     MoveFiles(videoList, fb.SelectedPath + @"\Video Files");
                     IncreaseProgressBar();
                     MoveFiles(executableList, fb.SelectedPath + @"\Executable Files");
+                    IncreaseProgressBar();
+                    MoveFiles(codeList, fb.SelectedPath + @"\Code Files");
                     IncreaseProgressBar();
 
                     MessageBox.Show("Done!");

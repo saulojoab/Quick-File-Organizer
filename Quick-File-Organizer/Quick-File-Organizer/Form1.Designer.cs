@@ -37,6 +37,7 @@
             this.lblExecutables = new System.Windows.Forms.Label();
             this.pgProgress = new System.Windows.Forms.ProgressBar();
             this.lblImages = new System.Windows.Forms.Label();
+            this.lblCode = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -137,12 +138,24 @@
             this.lblImages.TabIndex = 8;
             this.lblImages.Text = "Images: 0";
             // 
+            // lblCode
+            // 
+            this.lblCode.AutoSize = true;
+            this.lblCode.Font = new System.Drawing.Font("Muli ExtraLight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCode.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblCode.Location = new System.Drawing.Point(364, 314);
+            this.lblCode.Name = "lblCode";
+            this.lblCode.Size = new System.Drawing.Size(77, 26);
+            this.lblCode.TabIndex = 9;
+            this.lblCode.Text = "Code: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(794, 328);
+            this.ClientSize = new System.Drawing.Size(794, 349);
+            this.Controls.Add(this.lblCode);
             this.Controls.Add(this.lblImages);
             this.Controls.Add(this.pgProgress);
             this.Controls.Add(this.lblExecutables);
@@ -172,6 +185,7 @@
         private System.Windows.Forms.Label lblExecutables;
         private System.Windows.Forms.ProgressBar pgProgress;
         private System.Windows.Forms.Label lblImages;
+        private System.Windows.Forms.Label lblCode;
     }
 }
 
